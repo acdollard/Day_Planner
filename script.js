@@ -16,9 +16,20 @@ $(document).ready(function() {
     setInterval(update, 1000);
 
     
-    
+    console.log(moment().format("HH"));
+
+    console.log(moment(new Date()));
 
 
+
+
+$(".row").on("click", function(){
+   if(event.target.matches("button"))
+   {
+       debugger; 
+       console.log($(this.childNodes[3].innerHTML));
+   }
+});
 
 
 
