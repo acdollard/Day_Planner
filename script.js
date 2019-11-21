@@ -1,24 +1,28 @@
 
  
-let dateTime = "";
-    date = ""; 
+// let dateTime = "";
+//     date = ""; 
 
 
-let update = function () {
-    date = moment(new Date())
-    dateTime.text(date.format("MM-DD-YYYY , hh:mm:ss a")); 
+// let update = function () {
+//     date = moment(new Date())
+//     dateTime.text(date.format("MM-DD-YYYY , hh:mm:ss a")); 
      
-}
+// }
 
 $(document).ready(function() {
-    dateTime = $("#currentDay");
-    update();
-    setInterval(update, 1000);
+
+let today = moment().format("MM-DD-YYYY")
+$("#currentDay").text("Today's date: " + today);
+    // dateTime = $("#currentDay");
+    // update();
+    // setInterval(update, 1000);
 
     
-    console.log(moment().format("HH"));
+    // console.log(moment().format("HH"));
 
-    console.log(moment(new Date()));
+    // console.log(moment(new Date()));
+    
 
 
 
@@ -35,12 +39,7 @@ function resetText() {
     $("#5pmtext").val(localStorage.getItem("5pmsaved_text"));
 
 }
-
 resetText();
-
-
-
-
 
 //functions to save text from textarea in local storage
     $("#9amBtn").on("click", function(){
@@ -89,6 +88,65 @@ resetText();
         JSON.stringify(localStorage.setItem("5pmsaved_text", saved_text));
     });
         
+
+    if (moment().isBefore(moment(today + " 09:00"))){
+        $("#9amtext").css({"background-color":"mediumseagreen" , "color":"white"});
+    } else if(moment().isAfter(moment(today + " 09:00"))){
+        $("#9amtext").css({"background-color":"tomato" , "color":"white"})
+    } ;
+
+    if (moment().isBefore(moment(today + " 10:00"))){
+        $("#10amtext").css({"background-color":"mediumseagreen" , "color":"white"});
+    } else if(moment().isAfter(moment(today + " 10:00"))){
+        $("#10amtext").css({"background-color":"tomato" , "color":"white"})
+    } ;
+
+    if (moment().isBefore(moment(today + " 11:00"))){
+        $("#11amtext").css({"background-color":"mediumseagreen" , "color":"white"});
+    } else if(moment().isAfter(moment(today + " 11:00"))){
+        $("#11amtext").css({"background-color":"tomato" , "color":"white"})
+    } 
+
+    if (moment().isBefore(moment(today + " 12:00"))){
+        $("#12pmtext").css({"background-color":"mediumseagreen" , "color":"white"});
+    } else if(moment().isAfter(moment(today + " 12:00"))){
+        $("#12pmtext").css({"background-color":"tomato" , "color":"white"})
+    } 
+
+    if (moment().isBefore(moment(today + " 13:00"))){
+        $("#1pmtext").css({"background-color":"mediumseagreen" , "color":"white"});
+    } else if(moment().isAfter(moment(today + " 13:00"))){
+        $("#1pmtext").css({"background-color":"tomato" , "color":"white"})
+    } 
+
+    if (moment().isBefore(moment(today + " 14:00"))){
+        $("#2pmtext").css({"background-color":"mediumseagreen" , "color":"white"});
+    } else if(moment().isAfter(moment(today + " 14:00"))){
+        $("#2pmtext").css({"background-color":"tomato" , "color":"white"})
+    } 
+
+    if (moment().isBefore(moment(today + " 15:00"))){
+        $("#3pmtext").css({"background-color":"mediumseagreen" , "color":"white"});
+    } else if(moment().isAfter(moment(today + " 15:00"))){
+        $("#3pmtext").css({"background-color":"tomato" , "color":"white"})
+    } 
+
+    if (moment().isBefore(moment(today + " 16:00"))){
+        $("#4pmtext").css({"background-color":"mediumseagreen" , "color":"white"});
+    } else if(moment().isAfter(moment(today + " 16:00"))){
+        $("#4pmtext").css({"background-color":"tomato" , "color":"white"})
+    } 
+
+    if (moment().isBefore(moment(today + " 17:00"))){
+        $("#5pmtext").css({"background-color":"mediumseagreen" , "color":"white"});
+    } else if(moment().isAfter(moment(today + " 17:00"))){
+        $("#5pmtext").css({"background-color":"tomato" , "color":"white"})
+    } 
+
+
+
+
+    
 
 
 
