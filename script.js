@@ -16,15 +16,15 @@ $(".saveBtn").on("click", function(event) {
 
 //function to set val() of textareas by pulling from local storage 
 function resetText() {
-    $("#9amtext").val(localStorage.getItem("9am"));
-    $("#10amtext").val(localStorage.getItem("10am"));
-    $("#11amtext").val(localStorage.getItem("11am"));
-    $("#12pmtext").val(localStorage.getItem("12pm"));
-    $("#1pmtext").val(localStorage.getItem("1pm"));
-    $("#2pmtext").val(localStorage.getItem("2pm"));
-    $("#3pmtext").val(localStorage.getItem("3pm"));
-    $("#4pmtext").val(localStorage.getItem("4pm"));
-    $("#5pmtext").val(localStorage.getItem("5pm"));
+    $("#9text").val(localStorage.getItem("9"));
+    $("#10text").val(localStorage.getItem("10"));
+    $("#11text").val(localStorage.getItem("11"));
+    $("#12text").val(localStorage.getItem("12"));
+    $("#13text").val(localStorage.getItem("13"));
+    $("#14text").val(localStorage.getItem("14"));
+    $("#15text").val(localStorage.getItem("15"));
+    $("#16text").val(localStorage.getItem("16"));
+    $("#17text").val(localStorage.getItem("17"));
 
 }
 resetText();
